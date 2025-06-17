@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 067\n");
+    for (int i = 1; i <= 10; i++) {
+        // Пропустить чётные числа
+        if (i % 2 == 0) {
+            continue;  // перейти сразу к следующей итерации
+        }
+
+        // Остановиться, если i больше 7
+        if (i > 7) {
+            break;  // выйти из цикла
+        }
+
+        printf("i = %d\n", i);
+    }
+
     return 0;
 }
