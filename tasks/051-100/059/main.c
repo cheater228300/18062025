@@ -4,9 +4,40 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 059\n");
+int check(int value, const char *message)
+{
+    printf("Проверка: %s\n", message);
+    return value;
+}
+
+int main()
+{
+    printf("=== Демонстрация короткого замыкания ===\n\n");
+
+    printf("1. Оператор && (И):\n");
+    if (check(0, "Первое условие (ложь)") &&
+        check(1, "Второе условие (истина)"))
+    {
+        printf("Оба условия истинны.\n");
+    }
+    else
+    {
+        printf("Не все условия истинны.\n");
+    }
+
+    printf("\n");
+
+    printf("2. Оператор || (ИЛИ):\n");
+    if (check(1, "Первое условие (истина)") ||
+        check(0, "Второе условие (ложь)"))
+    {
+        printf("Хотя бы одно условие истинно.\n");
+    }
+    else
+    {
+        printf("Все условия ложны.\n");
+    }
+
     return 0;
 }
