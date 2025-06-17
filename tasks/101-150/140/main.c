@@ -3,10 +3,13 @@
 140. Реализуйте функцию int count_even(int *arr, int size), возвращающую количество чётных чисел в массиве.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
-    printf("Solution for task 140\n");
-    return 0;
+int count_even(int *arr, int size) {
+    int count = 0;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] % 2 == 0) {
+            count++;
+        }
+    }
+    return count;
 }
+
