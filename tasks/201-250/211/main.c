@@ -1,5 +1,7 @@
 /*Условие задачи 211:
-211. Выведите значения переменных во время выполнения в GDB.*/
+211. Выведите значения переменных во время выполнения в GDB.
+команды: компиляция gcc -g main.c -o main
+gbd ./main -> break main.c:12 ->display a b i ->next*/
 
 #include <stdio.h>
 #include <stdlib.h>

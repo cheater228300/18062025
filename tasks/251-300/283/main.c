@@ -4,9 +4,16 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 283\n");
+    unsigned int n;
+    printf("Введите число: ");
+    scanf("%u", &n);
+
+    unsigned int inverted = ~n;
+
+    printf("Оригинал:  %u\n", n);
+    printf("Инверсия: %u\n", inverted);
+
     return 0;
 }

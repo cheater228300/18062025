@@ -4,9 +4,16 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+void counter() {
+    static int count = 0;  // статическая переменная, сохраняет значение между вызовами
+    count++;
+    printf("Вызов номер: %d\n", count);
+}
 
 int main() {
-    printf("Solution for task 295\n");
+    counter(); // Вызов номер: 1
+    counter(); // Вызов номер: 2
+    counter(); // Вызов номер: 3
     return 0;
 }

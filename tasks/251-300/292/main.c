@@ -4,9 +4,18 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+int x = 10; // глобальная переменная
+
+int get_global_x() {
+    return x;
+}
 
 int main() {
-    printf("Solution for task 292\n");
+    int x = 5; // локальная переменная
+
+    printf("Локальная x = %d\n", x);
+    printf("Глобальная x = %d\n", get_global_x());
+
     return 0;
 }

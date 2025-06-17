@@ -3,16 +3,21 @@
 gcc -g main.c -o main
 valgrind --leak-check=full ./main*/
 
-#include <stdio.h>
 #include <stdlib.h>
-void create_arr(int n){
-    int* arr=malloc(n*sizeof(int));
-    for(int i=0;i<10;i++){
-        arr[i]=i;
-    }
+
+void leakMemory() {
+    int *ptr = malloc(100 * sizeof(int)); // Выделяем память
+    // Забыли free(ptr) - утечка 400 байт (на 32-битной системе)
 }
+
 int main() {
-    create_arr(10);
-    
+    while (1) {
+        leakMemory(); // При каждом вызове утекает память
+    }
     return 0;
 }
+
+// Как обнаружить утечки:
+// - В Linux: 
+// valgrind --leak-check=full 
+// ./program

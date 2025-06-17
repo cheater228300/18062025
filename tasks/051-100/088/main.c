@@ -4,9 +4,35 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+int calculateSum(int N) {
+    int sum = 0;
+    
+    if (N >= 1) {
+        // Сумма положительных чисел: 1 + 2 + ... + N
+        for (int i = 1; i <= N; i++) {
+            sum += i;
+        }
+    } else {
+        // Сумма отрицательных чисел: 1 + 0 + (-1) + (-2) + ... + N
+        for (int i = 1; i >= N; i--) {
+            sum += i;
+        }
+    }
+    
+    return sum;
+}
 
 int main() {
-    printf("Solution for task 088\n");
+    int N;
+    
+    printf("Введите целое число N: ");
+    if (scanf("%d", &N) != 1) {
+        printf("Ошибка: нужно ввести целое число!\n");
+        return 1;
+    }
+
+    printf("Сумма чисел от 1 до %d: %d\n", N, calculateSum(N));
+    
     return 0;
 }

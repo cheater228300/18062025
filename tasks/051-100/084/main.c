@@ -4,9 +4,39 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 084\n");
+    int day;
+    printf("Введите день недели (1-7): ");
+    scanf("%d", &day);
+    switch (day) {
+        case 1: case 2: case 3: case 4: case 5:
+            printf("Рабочий день.\n"); break;
+        case 6: case 7:
+            printf("Выходной.\n"); break;
+        default:
+            printf("Ошибка: введите число от 1 до 7.\n");
+    }
     return 0;
 }
+
+/*#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        printf("Использование: %s <день_недели_1-7>\n", argv[0]);
+        return 1;
+    }
+
+    int day = atoi(argv[1]);
+    switch (day) {
+        case 1: case 2: case 3: case 4: case 5:
+            printf("Рабочий день.\n"); break;
+        case 6: case 7:
+            printf("Выходной.\n"); break;
+        default:
+            printf("Ошибка: введите число от 1 до 7.\n");
+    }
+    return 0;
+}*/

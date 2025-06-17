@@ -4,9 +4,18 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 086\n");
+    int i = 0;
+
+start: // Метка
+    printf("%d ", i);
+    i++;
+    
+    if (i < 5) {
+        goto start; // Переход к метке
+    }
+    
+    printf("\nЦикл завершен.\n");
     return 0;
 }

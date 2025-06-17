@@ -1,12 +1,11 @@
-/*
-Условие задачи 246:
-246. Создайте два .c файла и один общий заголовочный файл.
-*/
-
-#include <stdio.h>
-#include <stdlib.h>
+// Задача 246 Создайте два .c файла и один общий заголовочный файл.
+#include"m1.h"
 
 int main() {
-    printf("Solution for task 246\n");
+    printf("Решение задачи 246\n");
     return 0;
 }
+//m1.h
+#include<stdio.h>
+//m2.c
+#include"m1.h"
