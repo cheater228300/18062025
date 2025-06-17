@@ -1,0 +1,2 @@
+gcc -Wall -g unique_array.c -o unique_array
+./unique_array
