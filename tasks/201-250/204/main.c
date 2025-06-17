@@ -4,9 +4,27 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+// Функция, которая строит таблицу значений func на интервале [start, end]
+void print_table(int (*func)(int), int start, int end) {
+    printf(" x | f(x) \n");
+    printf("---|-------\n");
+    for (int x = start; x <= end; x++) {
+        printf("%2d | %5d\n", x, func(x));
+    }
+}
+
+// Пример функции: квадрат числа
+int square(int x) {
+    return x * x;
+}
 
 int main() {
-    printf("Solution for task 204\n");
+    int start = 1, end = 10;
+
+    // Выводим таблицу значений функции square от 1 до 10
+    print_table(square, start, end);
+
     return 0;
 }
+
