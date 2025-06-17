@@ -4,9 +4,12 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 195\n");
+#define PRINT_SIZE(type) printf("Size of " #type ": %zu\n", sizeof(type)) // #type превращает тип в строку
+
+int main()
+{
+    PRINT_SIZE(int);    // Выведет размер int
+    PRINT_SIZE(double); // Выведет размер double
     return 0;
 }
