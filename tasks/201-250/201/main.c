@@ -4,9 +4,11 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+#define LOG(fmt, ...) printf(fmt, __VA_ARGS__)
 
 int main() {
-    printf("Solution for task 201\n");
+    LOG("Число: %d, Строка: %s\n", 42, "пример");
     return 0;
 }
+
