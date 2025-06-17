@@ -4,9 +4,15 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>
 
-int main() {
-    printf("Solution for task 261\n");
+int main()
+{
+    // Буферизированный вывод (использует буфер)
+    printf("Это буферизированный вывод (printf)\n");
+
+    // Небуферизированный вывод (выводится сразу)
+    write(STDOUT_FILENO, "Это небуферизированный вывод (write)\n", 39);
+
     return 0;
 }
