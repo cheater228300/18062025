@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 064\n");
+    int number;
+
+    while (1) {  // бесконечный цикл
+        printf("Введите число (0 для выхода): ");
+        scanf("%d", &number);
+
+        if (number == 0) {
+            break;  // выход из цикла
+        }
+
+        printf("Вы ввели: %d\n", number);
+    }
+
+    printf("Цикл завершён.\n");
     return 0;
 }
