@@ -4,9 +4,25 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 124\n");
+int main()
+{
+    FILE *source = fopen("source.txt", "r");
+    FILE *dest = fopen("dest.txt", "w");
+    if (source == NULL || dest == NULL)
+    {
+        printf("Ошибка открытия файла!\n");
+        return 1;
+    }
+
+    char ch;
+    while ((ch = fgetc(source)) != EOF)
+    {
+        fputc(ch, dest);
+    }
+
+    fclose(source);
+    fclose(dest);
+    printf("Файл скопирован!\n");
     return 0;
 }
