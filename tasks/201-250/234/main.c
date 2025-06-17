@@ -5,8 +5,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main() {
-    printf("Solution for task 234\n");
+    srand(time(NULL));
+    int** arr=malloc(10*sizeof(int*));
+    for (int i=0;i<10;i++){
+        arr[i]=malloc(sizeof(int));
+        *arr[i]=rand()%10;
+    }
+    for (int i=0;i<10;i++){
+        printf("%d ",*arr[i]);
+    }
+
     return 0;
 }

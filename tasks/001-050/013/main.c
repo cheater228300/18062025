@@ -4,9 +4,10 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 013\n");
+    int a = 5, b = 7;
+    int sum = a + b;
+    printf("Сумма: %d + %d = %d\n", a, b, sum);
     return 0;
 }

@@ -4,9 +4,11 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 019\n");
+    const int MAX = 100;  // Константа
+    // MAX = 200;  // Раскомментируйте эту строку, чтобы увидеть ошибку
+    
+    printf("MAX = %d\n", MAX);
     return 0;
 }

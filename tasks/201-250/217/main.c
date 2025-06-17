@@ -1,5 +1,8 @@
 /*Условие задачи 217:
-217. Протестируйте простую программу с помощью gdb и valgrind и опишите вывод.*/
+217. Протестируйте простую программу с помощью gdb и valgrind и опишите вывод.
+gcc -g main.c -o main
+valgrind --leak-check=full ./main
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

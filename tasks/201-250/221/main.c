@@ -5,13 +5,21 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define SIZE 10
+
 int main() {
-    int* arr=malloc(SIZE*sizeof(int));
-    for(int i=0;i<SIZE;i++){
-        arr[i]=i;
+    int *ptr = malloc(sizeof(int) * 10); // Выделяем память
+    
+    if (ptr == NULL) {
+        printf("Ошибка выделения памяти\n");
+        return 1;
     }
-    free(arr);
-    free(arr);
+    
+    free(ptr);  // Корректное освобождение
+    printf("Память освобождена\n");
+    
+    // Повторный free - опасная операция!
+    free(ptr);  // Неопределённое поведение
+    printf("Это сообщение может не вывестись\n");
+    
     return 0;
 }

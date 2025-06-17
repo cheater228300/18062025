@@ -4,10 +4,9 @@
 */
 
 #include "stdio.h"
+#define MAX 10
 int main(){
-    print_hello_world();
+    printf("%d\n",MAX);
     return 0;
 }
-void print_hello_world(){
-    printf("Hello World!\n");
-}
+

@@ -1,5 +1,8 @@
 /*Условие задачи 212:
-212. Создайте ошибку segmentation fault и найдите ее с помощью GDB.*/
+212. Создайте ошибку segmentation fault и найдите ее с помощью GDB.
+gcc -g main.c -o main
+gdb ./main 
+run */
 
 #include <stdio.h>
 #include <stdlib.h>

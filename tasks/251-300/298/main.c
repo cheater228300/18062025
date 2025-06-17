@@ -4,9 +4,15 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+// Объявляем inline функцию для сложения двух чисел
+inline int add(int a, int b) {
+    return a + b;
+}
 
 int main() {
-    printf("Solution for task 298\n");
+    int x = 5, y = 7;
+    int result = add(x, y);
+    printf("%d + %d = %d\n", x, y, result);
     return 0;
 }

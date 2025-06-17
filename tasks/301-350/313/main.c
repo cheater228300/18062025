@@ -1,12 +1,31 @@
-/*
-Условие задачи 313:
-313. Напишите программу, которая принимает два числа и операцию (+, -, *, /) как аргументы и выполняет соответствующее математическое действие.
-*/
-
+// Задача 313 Напишите программу, которая принимает два числа и операцию (+, -, *, /) как аргументы и выполняет соответствующее математическое действие.
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 313\n");
+    int a, b;
+    char d;
+    printf("Введите значение для действие, b и a:\n");
+    d = getchar();
+    scanf("%d", &a);
+    scanf("%d", &b);
+    int res;
+    switch (d)
+    {
+    case '+':
+        res = a + b;
+        break;
+    case '-':
+        res = a - b;
+        break;
+    case '*':
+        res = a * b;
+        break;
+    case '/':
+        res = a / b;
+        break;
+    default:
+        break;
+    }
+    printf("res = %d", res);
     return 0;
 }

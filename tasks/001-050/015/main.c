@@ -4,9 +4,15 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 015\n");
+    int n = 5;
+    
+    printf("Исходное значение: %d\n", n);
+    printf("Постфиксный инкремент: %d\n", n++); // Выведет 5, затем n=6
+    printf("После инкремента: %d\n", n);
+    printf("Префиксный декремент: %d\n", --n);  // n=5, выведет 5
+    printf("После декремента: %d\n", n);
+    
     return 0;
 }

@@ -4,9 +4,28 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdbool.h>
+
+bool hasDuplicates(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = i + 1; j < size; j++) {
+            if (arr[i] == arr[j]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
 int main() {
-    printf("Solution for task 157\n");
+    int arr[] = {1, 2, 3, 2, 5};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    
+    if (hasDuplicates(arr, size)) {
+        printf("В массиве есть дубликаты\n");
+    } else {
+        printf("Дубликатов нет\n");
+    }
+    
     return 0;
 }

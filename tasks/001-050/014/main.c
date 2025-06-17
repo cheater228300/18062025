@@ -4,9 +4,10 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 014\n");
+    int x = 10, y = 3;
+    printf("Умножение: %d * %d = %d\n", x, y, x * y);
+    printf("Деление: %d / %d = %d (целочисленное)\n", x, y, x / y);
     return 0;
 }

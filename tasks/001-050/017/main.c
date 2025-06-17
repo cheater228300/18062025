@@ -4,9 +4,11 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+typedef int MyInt;  // Создаём псевдоним для int
 
 int main() {
-    printf("Solution for task 017\n");
+    MyInt number = 42;  // Используем псевдоним
+    printf("Значение: %d\n", number);
     return 0;
 }

@@ -4,9 +4,12 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+enum Color { RED, GREEN, BLUE };  // RED=0, GREEN=1, BLUE=2
 
 int main() {
-    printf("Solution for task 020\n");
+    enum Color color = GREEN;  // Присваиваем значение
+    printf("Цвет: %d\n", color);  // Выведет 1 (GREEN)
+    
     return 0;
 }

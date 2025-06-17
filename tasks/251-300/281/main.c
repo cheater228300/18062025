@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+int is_power_of_two(unsigned int n) {
+    return n != 0 && (n & (n - 1)) == 0;
+}
 
 int main() {
-    printf("Solution for task 281\n");
+    unsigned int number;
+    printf("Введите число: ");
+    scanf("%u", &number);
+
+    if (is_power_of_two(number)) {
+        printf("%u — это степень двойки.\n", number);
+    } else {
+        printf("%u — не является степенью двойки.\n", number);
+    }
+
     return 0;
 }

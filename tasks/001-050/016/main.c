@@ -4,9 +4,12 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 016\n");
+    int a = 5;
+    float b = 3.14f;
+    float result = a + b;  // int автоматически приводится к float
+    
+    printf("Результат: %.2f\n", result);  // Выведет 8.14
     return 0;
 }

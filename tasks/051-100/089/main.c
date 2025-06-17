@@ -4,9 +4,13 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 089\n");
+    int num = 5;
+    printf("Таблица умножения для %d:\n", num);
+    
+    for (int i = 1; i <= 10; i++) {
+        printf("%d × %d = %d\n", num, i, num * i);
+    }
     return 0;
 }

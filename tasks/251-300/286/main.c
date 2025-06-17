@@ -4,9 +4,28 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+int my_strlen(const char* str) {
+    int length = 0;
+    while (str[length] != '\0') {
+        length++;
+    }
+    return length;
+}
 
 int main() {
-    printf("Solution for task 286\n");
+    char str[100];
+    printf("Введите строку: ");
+    fgets(str, sizeof(str), stdin);
+
+    // Убираем символ новой строки, если он есть
+    int len = my_strlen(str);
+    if (len > 0 && str[len - 1] == '\n') {
+        str[len - 1] = '\0';
+        len--;
+    }
+
+    printf("Длина строки: %d\n", len);
+
     return 0;
 }
