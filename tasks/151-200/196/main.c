@@ -4,9 +4,16 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 196\n");
+#define ARRAY_INIT(arr, val)                     \
+    for (size_t i = 0; i < ARRAY_SIZE(arr); i++) \
+    arr[i] = val // Заполнение массива значением
+
+int main()
+{
+    int arr[5];
+    ARRAY_INIT(arr, 7); // Заполняет массив семерками
+    for (int i = 0; i < 5; i++)
+        printf("%d ", arr[i]); // Проверка
     return 0;
 }
