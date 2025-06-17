@@ -10,3 +10,9 @@ int main() {
     printf("\n");
     return 0;
 }
+
+//gcc -g main.c -o prog
+//gdb ./prog
+//gdb run
+//(gdb) backtrace   для просмотра стека вызовов
+
