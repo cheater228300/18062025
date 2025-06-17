@@ -1,0 +1,2 @@
+gcc -Wall -g binary_file.c -o binary_file
+./binary_file
