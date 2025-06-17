@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <stddef.h>
 
-int main() {
-    printf("Solution for task 199\n");
+#define CONTAINER_OF(ptr, type, member) ((type *)((char *)(ptr) - offsetof(type, member))) // Получение структуры по полю
+
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+
+int main()
+{
+    struct Node node = {42, NULL};
+    int *pdata = &node.data;
+    struct Node *pnode = CONTAINER_OF(pdata, struct Node, data); // Восстанавливаем указатель на Node
+    printf("Data: %d\n", pnode->data);                           // Должно вывести 42
     return 0;
 }
