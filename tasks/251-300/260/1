@@ -1,0 +1,2 @@
+gcc -Wall -g struct_file.c -o struct_file
+./struct_file
