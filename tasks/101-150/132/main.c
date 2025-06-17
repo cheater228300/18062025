@@ -13,8 +13,8 @@
 #define MAX_WORD_LEN 100
 
 int main() {
-    FILE *in = fopen("input.txt", "r");
-    FILE *out = fopen("output.txt", "w");
+    FILE *in = fopen("input.txt", "r"); //нужно создать файл input.txt и написать рандомные слова
+    FILE *out = fopen("output.txt", "w"); //нужно создать пустой файл output.txt
 
     if (!in || !out) {
         printf("Ошибка при открытии файла.\n");
