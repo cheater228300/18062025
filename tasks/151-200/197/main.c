@@ -4,9 +4,19 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 197\n");
+#define SWAP_T(T, a, b) \
+    {                   \
+        T temp = a;     \
+        a = b;          \
+        b = temp;       \
+    } // Обмен для любого типа
+
+int main()
+{
+    const char *s1 = "Hello", *s2 = "World";
+    printf("Before: s1=%s, s2=%s\n", s1, s2);
+    SWAP_T(const char *, s1, s2); // Меняем указатели местами
+    printf("After: s1=%s, s2=%s\n", s1, s2);
     return 0;
 }
