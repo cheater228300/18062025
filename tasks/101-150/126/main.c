@@ -4,9 +4,29 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <ctype.h>
 
-int main() {
-    printf("Solution for task 126\n");
+int main()
+{
+    FILE *file = fopen("example.txt", "r");
+    if (file == NULL)
+    {
+        printf("Ошибка открытия файла!\n");
+        return 1;
+    }
+
+    int wordCount = 0;
+    char ch, prev = ' ';
+    while ((ch = fgetc(file)) != EOF)
+    {
+        if (isspace(prev) && !isspace(ch))
+        {
+            wordCount++;
+        }
+        prev = ch;
+    }
+
+    printf("Количество слов: %d\n", wordCount);
+    fclose(file);
     return 0;
 }
