@@ -1,12 +1,11 @@
-/*
-Условие задачи 253:
-253. Напишите Makefile, поддерживающий цели build, test, clean, run.
-*/
-
+#include "utils.h"
+#include "math.h"
+#include "helpers.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 253\n");
+    print_message();
+    printf("Square of 5: %d\n", square(5));
+    print_helper();
     return 0;
 }
