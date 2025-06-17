@@ -4,9 +4,12 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 193\n");
+#define ARRAY_SIZE(arr) (sizeof(arr) / sizeof(arr[0])) // Размер массива = общий размер / размер элемента
+
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5};
+    printf("Array size: %zu\n", ARRAY_SIZE(arr)); // Выведет 5
     return 0;
 }
