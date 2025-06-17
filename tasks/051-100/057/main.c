@@ -4,9 +4,22 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 057\n");
+int main()
+{
+    int number;
+
+    printf("Введите число: ");
+    scanf("%d", &number);
+
+    if (number > 0 && number % 2 != 0)
+    {
+        printf("%d — положительное и нечётное.\n", number);
+    }
+    else
+    {
+        printf("%d — число не положительное и четное.\n", number);
+    }
+
     return 0;
 }
