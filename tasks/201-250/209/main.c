@@ -7,6 +7,12 @@
 #include <stdlib.h>
 
 int main() {
-    printf("Solution for task 209\n");
+    printf("Решение 209\n");
     return 0;
 }
+
+//Команды в терминале для запуска GDB
+//gcc -g main.c -o main
+//gdb ./main
+//break main
+//run
