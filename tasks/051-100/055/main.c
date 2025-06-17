@@ -4,9 +4,22 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 055\n");
+int main()
+{
+    int num;
+
+    printf("Введите число: ");
+    scanf("%d", &num);
+
+    if ((num > 0 && num % 2 == 0) || (num < 0 && num % 3 == 0))
+    {
+        printf("Число удовлетворяет условиям!\n");
+    }
+    else
+    {
+        printf("Число НЕ удовлетворяет условиям.\n");
+    }
+
     return 0;
 }
