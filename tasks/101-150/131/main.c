@@ -4,9 +4,24 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-int main() {
-    printf("Solution for task 131\n");
+#define MAX_LINE 1024
+
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        printf("Использование: %s <подстрока>\n", argv[0]);
+        return 1;
+    }
+
+    char *pattern = argv[1];
+    char line[MAX_LINE];
+
+    while (fgets(line, sizeof(line), stdin)) {
+        if (strstr(line, pattern)) {
+            printf("%s", line);  // строка содержит подстроку — выводим
+        }
+    }
+
     return 0;
 }
