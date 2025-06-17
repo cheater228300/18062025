@@ -4,9 +4,22 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 056\n");
+int main()
+{
+    int number;
+
+    printf("Введите число: ");
+    scanf("%d", &number);
+
+    if (number >= 1 && number <= 10)
+    {
+        printf("%d — попадает в диапазон [1, 10].\n", number);
+    }
+    else
+    {
+        printf("%d — НЕ попадает в диапазон [1, 10].\n", number);
+    }
+
     return 0;
 }
