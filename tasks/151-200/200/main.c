@@ -4,9 +4,12 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 200\n");
+#define PRINT_VAR(x) printf(#x " = %d\n", x) // #x превращает имя переменной в строку
+
+int main()
+{
+    int count = 100;
+    PRINT_VAR(count); // Выведет "count = 100"
     return 0;
 }
