@@ -4,9 +4,35 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+// Структура с указателем на функцию, принимающую int и возвращающую void
+typedef struct {
+    const char *name;
+    void (*func)(int);
+} Operation;
+
+// Пример функций
+void print_square(int x) {
+    printf("Квадрат %d = %d\n", x, x * x);
+}
+
+void print_double(int x) {
+    printf("Удвоенное %d = %d\n", x, x * 2);
+}
 
 int main() {
-    printf("Solution for task 208\n");
+    Operation ops[] = {
+        {"Квадрат", print_square},
+        {"Удвоение", print_double}
+    };
+
+    int n = sizeof(ops) / sizeof(ops[0]);
+
+    for (int i = 0; i < n; i++) {
+        printf("Выполняем операцию: %s\n", ops[i].name);
+        ops[i].func(5);
+    }
+
     return 0;
 }
+
