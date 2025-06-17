@@ -2,11 +2,11 @@
 Условие задачи 203:
 203. Используйте директиву #pragma once или защитные конструкции #ifndef ... #endif.
 */
+//использовали ifndef и endif
+#ifndef MY_HEADER_H
+#define MY_HEADER_H
 
-#include <stdio.h>
-#include <stdlib.h>
+// Пример объявления функции
+void my_function();
 
-int main() {
-    printf("Solution for task 203\n");
-    return 0;
-}
+#endif // MY_HEADER_H
