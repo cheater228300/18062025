@@ -4,9 +4,13 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 066\n");
+    for (int i = 1; i <= 10; i++) {         // внешний цикл — множитель
+        for (int j = 1; j <= 10; j++) {     // внутренний цикл — множимое
+            printf("%2d × %2d = %3d\t", i, j, i * j);
+        }
+        printf("\n");  // переход на новую строку после каждой строки таблицы
+    }
     return 0;
 }
