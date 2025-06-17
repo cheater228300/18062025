@@ -4,9 +4,35 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-int main() {
-    printf("Solution for task 264\n");
+typedef struct
+{
+    char name[50];
+    char phone[20];
+} Contact;
+
+void add_contact(FILE *file)
+{
+    Contact c;
+    printf("Введите имя: ");
+    scanf("%s", c.name);
+    printf("Введите телефон: ");
+    scanf("%s", c.phone);
+    fprintf(file, "%s %s\n", c.name, c.phone);
+}
+
+int main()
+{
+    FILE *file = fopen("contacts.txt", "a+");
+    if (!file)
+    {
+        perror("Ошибка открытия файла");
+        return 1;
+    }
+
+    add_contact(file);
+    fclose(file);
+    printf("Контакт сохранён!\n");
     return 0;
 }
