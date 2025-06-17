@@ -1,0 +1,2 @@
+gcc -Wall -g read_file.c -o read_file
+./read_file
