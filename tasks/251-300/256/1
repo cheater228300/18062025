@@ -1,0 +1,6 @@
+make build
+make test
+make run
+./myprogram
+test
+./mytest

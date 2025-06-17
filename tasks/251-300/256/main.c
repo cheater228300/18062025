@@ -1,12 +1,9 @@
-/*
-Условие задачи 256:
-256. Создайте динамическую библиотеку и протестируйте её использование.
-*/
-
 #include <stdio.h>
-#include <stdlib.h>
+#include "lib.h"
 
 int main() {
-    printf("Solution for task 256\n");
+    int a = 5, b = 3;
+    printf("Add: %d + %d = %d\n", a, b, add(a, b));
+    printf("Multiply: %d * %d = %d\n", a, b, multiply(a, b));
     return 0;
 }
