@@ -4,9 +4,22 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 121\n");
+int main()
+{
+    FILE *file = fopen("example.txt", "r");
+    if (file == NULL)
+    {
+        printf("Ошибка открытия файла!\n");
+        return 1;
+    }
+
+    char ch;
+    while ((ch = fgetc(file)) != EOF)
+    {
+        putchar(ch);
+    }
+
+    fclose(file);
     return 0;
 }
