@@ -4,9 +4,17 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+void swap(int *a, int *b) {
+    int temp = *a;  // сохраняем значение по адресу a
+    *a = *b;        // копируем значение по адресу b в a
+    *b = temp;      // записываем сохранённое значение в b
+}
 
 int main() {
-    printf("Solution for task 137\n");
+    int x = 10, y = 20;
+    printf("До swap: x = %d, y = %d\n", x, y);
+    swap(&x, &y);
+    printf("После swap: x = %d, y = %d\n", x, y);
     return 0;
 }
