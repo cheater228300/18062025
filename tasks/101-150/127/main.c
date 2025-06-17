@@ -4,9 +4,23 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+int main()
+{
+    FILE *file = fopen("data.txt", "w+");
+    if (file == NULL)
+    {
+        printf("Ошибка открытия файла!\n");
+        return 1;
+    }
 
-int main() {
-    printf("Solution for task 127\n");
+    fprintf(file, "%d %s\n", 42, "Hello"); // Запись
+    rewind(file);                          // Перемотка в начало
+
+    int num;
+    char str[20];
+    fscanf(file, "%d %s", &num, str); // Чтение
+    printf("Прочитано: %d %s\n", num, str);
+
+    fclose(file);
     return 0;
 }
