@@ -4,9 +4,28 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 267\n");
+int main(int argc, char *argv[])
+{
+    if (argc < 2)
+    {
+        printf("Использование: %s <файл>\n", argv[0]);
+        return 1;
+    }
+
+    FILE *file = fopen(argv[1], "r");
+    if (!file)
+    {
+        perror("Ошибка открытия файла");
+        return 1;
+    }
+
+    char ch;
+    while ((ch = fgetc(file)) != EOF)
+    {
+        putchar(ch);
+    }
+
+    fclose(file);
     return 0;
 }
