@@ -4,9 +4,23 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 122\n");
+int main()
+{
+    FILE *file = fopen("example.txt", "r");
+    if (file == NULL)
+    {
+        printf("Ошибка открытия файла!\n");
+        return 1;
+    }
+
+    int count = 0;
+    while (fgetc(file) != EOF)
+    {
+        count++;
+    }
+
+    printf("Количество символов: %d\n", count);
+    fclose(file);
     return 0;
 }
