@@ -4,9 +4,22 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 265\n");
+int main()
+{
+    FILE *file = fopen("data.bin", "rb");
+    if (!file)
+    {
+        perror("Ошибка открытия файла");
+        return 1;
+    }
+
+    unsigned char byte;
+    while (fread(&byte, 1, 1, file))
+    {
+        printf("%02X ", byte); // Вывод в HEX
+    }
+
+    fclose(file);
     return 0;
 }
