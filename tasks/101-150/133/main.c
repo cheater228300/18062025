@@ -7,8 +7,8 @@
 #include <stdlib.h>
 
 int main() {
-    const char *input_filename = "input.txt";
-    const char *output_filename = "output.txt";
+    const char *input_filename = "input.txt"; //Нужно создать input.txt и написать рандомный текст
+    const char *output_filename = "output.txt"; //нужно создать пустой output.txt
     const char key = 0x5A;  // Простой XOR-ключ (можно заменить)
 
     FILE *in = fopen(input_filename, "rb");
