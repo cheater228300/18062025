@@ -1,12 +1,11 @@
-/*
-Условие задачи 252:
-252. Создайте проект из 4 файлов: main.c, utils.c, math.c, helpers.c. Реализуйте Makefile для сборки.
-*/
-
+#include "utils.h"
+#include "math.h"
+#include "helpers.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 252\n");
+    print_message();
+    printf("Square of 5: %d\n", square(5));
+    print_helper();
     return 0;
 }
