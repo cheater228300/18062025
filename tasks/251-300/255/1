@@ -1,0 +1,9 @@
+zapusk
+gcc -Wall -g -c main.c -o main.o
+gcc main.o -L. -lmylib -o myprogram
+ar t libmylib.a
+./myprogram
+test
+gcc -Wall -g -c test.c -o test.o
+gcc test.o -L. -lmylib -o mytest
+./mytest

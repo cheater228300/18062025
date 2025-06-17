@@ -1,12 +1,9 @@
-/*
-Условие задачи 255:
-255. Подключите статическую библиотеку к программе.
-*/
-
 #include <stdio.h>
-#include <stdlib.h>
+#include "lib.h"
 
 int main() {
-    printf("Solution for task 255\n");
+    int a = 5, b = 3;
+    printf("Add: %d + %d = %d\n", a, b, add(a, b));
+    printf("Multiply: %d * %d = %d\n", a, b, multiply(a, b));
     return 0;
 }
