@@ -1,0 +1,6 @@
+zapusk 
+gcc -Wall -g -c lib.c -o lib.o
+gcc -Wall -g -c utils.c -o utils.o
+ar rcs libmylib.a lib.o utils.o
+vivod
+ar t libmylib.a
