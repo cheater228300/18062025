@@ -4,9 +4,20 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 065\n");
+    int N;
+    int sum = 0;
+    int i = 1;
+
+    printf("Введите число N: ");
+    scanf("%d", &N);
+
+    while (i <= N) {
+        sum += i;
+        i++;
+    }
+
+    printf("Сумма чисел от 1 до %d: %d\n", N, sum);
     return 0;
 }
