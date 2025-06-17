@@ -1,0 +1,2 @@
+gcc -Wall -g range_check.c -o range_check
+./range_check
