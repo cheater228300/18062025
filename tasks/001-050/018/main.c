@@ -4,9 +4,11 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 018\n");
+    int arr[] = {10, 20, 30, 40, 50};
+    size_t size = sizeof(arr) / sizeof(arr[0]);  // Вычисляем количество элементов
+    
+    printf("Количество элементов: %zu\n", size);  // %zu для size_t
     return 0;
 }
