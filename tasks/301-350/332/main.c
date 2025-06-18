@@ -4,26 +4,43 @@
 */
 
 #include <stdio.h>
+#include <ctype.h>
 
-void caesar(char *text, int shift) {
-    for (int i = 0; text[i]; i++) {
+void caesar_cipher(char *text, int shift) {
+    for (int i = 0; text[i] != '\0'; i++) {
         char c = text[i];
-        if (c >= 'a' && c <= 'z')
-            text[i] = 'a' + (c - 'a' + shift + 26) % 26;
-        else if (c >= 'A' && c <= 'Z')
-            text[i] = 'A' + (c - 'A' + shift + 26) % 26;
+        if (isalpha(c)) {
+            char base = isupper(c) ? 'A' : 'a';
+            // Сдвигаем букву с учётом кругового перехода по алфавиту
+            text[i] = (char)((((c - base) + shift + 26) % 26) + base);
+        }
     }
 }
 
 int main() {
-    char text[] = "Hello, World!";
-    int shift = 3;
+    char text[256];
+    int shift;
+    int choice;
 
-    caesar(text, shift);
-    printf("Зашифровано: %s\n", text);
+    printf("Введите текст (максимум 255 символов):\n");
+    fgets(text, sizeof(text), stdin);
 
-    caesar(text, -shift);
-    printf("Расшифровано: %s\n", text);
+    printf("Введите сдвиг (целое число): ");
+    scanf("%d", &shift);
+
+    printf("Выберите операцию:\n1 - Зашифровать\n2 - Расшифровать\nВаш выбор: ");
+    scanf("%d", &choice);
+
+    if (choice == 1) {
+        caesar_cipher(text, shift);
+        printf("Зашифрованный текст:\n%s\n", text);
+    } else if (choice == 2) {
+        caesar_cipher(text, -shift);
+        printf("Расшифрованный текст:\n%s\n", text);
+    } else {
+        printf("Неверный выбор операции.\n");
+    }
 
     return 0;
 }
+
