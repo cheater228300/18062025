@@ -136,3 +136,55 @@ int main() {
     cb_free(cb);
     return 0;
 }
+
+/*#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int *data;
+    int size, start, count;
+} RingBuffer;
+
+void init(RingBuffer *rb, int size) {
+    rb->data = malloc(size * sizeof(int));
+    rb->size = size;
+    rb->start = 0;
+    rb->count = 0;
+}
+
+void freeBuffer(RingBuffer *rb) {
+    free(rb->data);
+}
+
+int enqueue(RingBuffer *rb, int val) {
+    if (rb->count == rb->size) return 0; // полный
+    int end = (rb->start + rb->count) % rb->size;
+    rb->data[end] = val;
+    rb->count++;
+    return 1;
+}
+
+int dequeue(RingBuffer *rb, int *val) {
+    if (rb->count == 0) return 0; // пустой
+    *val = rb->data[rb->start];
+    rb->start = (rb->start + 1) % rb->size;
+    rb->count--;
+    return 1;
+}
+
+int main() {
+    RingBuffer rb;
+    init(&rb, 5);
+
+    enqueue(&rb, 10);
+    enqueue(&rb, 20);
+    enqueue(&rb, 30);
+
+    int v;
+    while (dequeue(&rb, &v)) {
+        printf("%d ", v);
+    }
+
+    freeBuffer(&rb);
+    return 0;
+}*/

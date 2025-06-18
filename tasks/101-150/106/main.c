@@ -4,9 +4,26 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 106\n");
+    int N;
+    unsigned long long factorial = 1;
+
+    printf("Введите число N: ");
+    scanf("%d", &N);
+
+    if (N < 0) {
+        printf("Факториал не определён для отрицательных чисел.\n");
+        return 1;
+    }
+
+    int i = 1;
+    while (i <= N) {
+        factorial *= i;
+        i++;
+    }
+
+    printf("Факториал числа %d равен %llu\n", N, factorial);
+
     return 0;
 }

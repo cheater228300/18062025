@@ -4,9 +4,14 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 028\n");
+    int a = 17;
+    int b = 5;
+
+    int remainder = a % b;
+
+    printf("Остаток от деления %d на %d равен %d\n", a, b, remainder);
+
     return 0;
 }

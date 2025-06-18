@@ -4,9 +4,14 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 032\n");
+    float f = 1.0f / 3.0f;
+    double d = 1.0 / 3.0;
+
+    printf("float:  %.10f\n", f);
+    printf("double: %.15lf\n", d);
+
     return 0;
 }
+

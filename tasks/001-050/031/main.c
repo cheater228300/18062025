@@ -4,9 +4,14 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 031\n");
+    float radius = 5.0f;
+    float pi = 3.14159265f;
+    float area = pi * radius * radius;
+
+    printf("Площадь круга с радиусом %.2f равна %.4f\n", radius, area);
+
     return 0;
 }
+

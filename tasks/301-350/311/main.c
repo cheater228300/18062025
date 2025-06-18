@@ -3,15 +3,27 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-int main(int arg, char *argv[]) {
-    int i = 1;
-    int res = 1;
-    char *endptr;
-    long num = strtol(argv[1], &endptr, 10);
-    while (i <= num){
-        res *= i;
-        i++;
+
+unsigned long long factorial(int n) {
+    if (n < 0) return 0; // Факториал не определён для отрицательных
+    unsigned long long result = 1;
+    for (int i = 2; i <= n; i++)
+        result *= i;
+    return result;
+}
+
+int main(int argc, char *argv[]) {
+    if (argc < 2) {
+        printf("Использование: %s число\n", argv[0]);
+        return 1;
     }
-    printf("факториал %ld = %d\n", num, res);
+
+    int n = atoi(argv[1]);
+    if (n < 0) {
+        printf("Ошибка: число должно быть неотрицательным\n");
+        return 1;
+    }
+
+    printf("Факториал %d = %llu\n", n, factorial(n));
     return 0;
 }

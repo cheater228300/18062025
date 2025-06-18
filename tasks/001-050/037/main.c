@@ -4,9 +4,10 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 037\n");
+    float x = 1000000000;  // 1 миллиард
+    float y = x * 1000000; // умножаем, чтобы вызвать переполнение
+    printf("%f\n", y);
     return 0;
 }

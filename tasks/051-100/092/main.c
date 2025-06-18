@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 092\n");
+    int N;
+    int count = 0;
+
+    printf("Введите значение N: ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++) {
+        if (i % 2 != 0) {
+            count++;
+        }
+    }
+
+    printf("Количество нечётных чисел от 1 до %d: %d\n", N, count);
+
     return 0;
 }

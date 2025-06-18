@@ -4,9 +4,26 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
+
+#define MAX_LINE 1024
 
 int main() {
-    printf("Solution for task 323\n");
+    FILE *f = fopen("data.csv", "r");
+    char line[MAX_LINE];
+
+    while (fgets(line, sizeof(line), f)) {
+        // Удаляем символ перевода строки
+        line[strcspn(line, "\n")] = 0;
+
+        char *token = strtok(line, ",");
+        while (token) {
+            printf("%-15s", token); // Вывод с фиксированной шириной
+            token = strtok(NULL, ",");
+        }
+        printf("\n");
+    }
+
+    fclose(f);
     return 0;
 }

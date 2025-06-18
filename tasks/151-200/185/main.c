@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+typedef struct {
+    char name[50];
+    char position[50];
+    double salary;
+} Employee;
+
+void printEmployee(Employee emp) {
+    printf("Имя: %s\n", emp.name);
+    printf("Должность: %s\n", emp.position);
+    printf("Зарплата: %.2f\n", emp.salary);
+}
 
 int main() {
-    printf("Solution for task 185\n");
+    Employee e = {"Иван Иванов", "Программист", 75000.0};
+    printEmployee(e);
     return 0;
 }

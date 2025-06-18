@@ -4,9 +4,11 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 041\n");
+    char ch;
+    printf("Enter a character: ");
+    ch = getchar();
+    printf("ASCII code of %c is %d\n", ch, ch);
     return 0;
 }

@@ -4,9 +4,34 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <limits.h>
 
 int main() {
-    printf("Solution for task 110\n");
+    int num;
+    int min = INT_MAX;  // максимально возможное целое для инициализации
+    int max = INT_MIN;  // минимально возможное целое для инициализации
+
+    printf("Введите числа (0 для завершения):\n");
+
+    while (1) {
+        scanf("%d", &num);
+        if (num == 0) {
+            break;
+        }
+        if (num < min) {
+            min = num;
+        }
+        if (num > max) {
+            max = num;
+        }
+    }
+
+    if (min == INT_MAX && max == INT_MIN) {
+        printf("Вы не ввели ни одного числа.\n");
+    } else {
+        printf("Минимальное значение: %d\n", min);
+        printf("Максимальное значение: %d\n", max);
+    }
+
     return 0;
 }

@@ -4,9 +4,11 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 043\n");
+    printf("Таблица ASCII символов:\n");
+    for (int i = 32; i < 127; i++) { // от 32 до 126 — печатаемые символы
+        printf("%3d : %c\n", i, i);
+    }
     return 0;
 }

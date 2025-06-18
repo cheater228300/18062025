@@ -4,9 +4,9 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 175\n");
-    return 0;
-}
+struct Student {
+    char name[50];
+    int age;
+    float grade;
+};

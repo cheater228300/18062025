@@ -4,9 +4,23 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 109\n");
+    int N;
+    printf("Введите число N: ");
+    scanf("%d", &N);
+
+    int a = 0, b = 1;
+
+    printf("Числа Фибоначчи меньше %d:\n", N);
+
+    while (a < N) {
+        printf("%d ", a);
+        int next = a + b;
+        a = b;
+        b = next;
+    }
+
+    printf("\n");
     return 0;
 }

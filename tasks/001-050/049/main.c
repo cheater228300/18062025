@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+void replace_spaces(char *str) {
+    for (int i = 0; str[i] != '\0' && str[i] != '\n'; i++) {
+        if (str[i] == ' ') {
+            str[i] = '!';
+        }
+    }
+}
 
 int main() {
-    printf("Solution for task 049\n");
+    char str[100];
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    
+    replace_spaces(str);
+    printf("String with spaces replaced: %s", str);
     return 0;
 }

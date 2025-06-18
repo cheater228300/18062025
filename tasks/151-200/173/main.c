@@ -4,9 +4,22 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+// Функция, которую будем вызывать через указатель
+int multiply(int a, int b) {
+    return a * b;
+}
 
 int main() {
-    printf("Solution for task 173\n");
+    // Объявляем указатель на функцию, принимающую два int и возвращающую int
+    int (*funcPtr)(int, int) = multiply;
+
+    int x = 5, y = 7;
+
+    // Вызов функции через указатель
+    int result = funcPtr(x, y);
+
+    printf("Результат умножения %d и %d: %d\n", x, y, result);
+
     return 0;
 }

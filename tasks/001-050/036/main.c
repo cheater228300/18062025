@@ -4,9 +4,22 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 036\n");
+    int num = 255;
+
+    printf("Десятичный формат: %d\n", num);       // 255
+    printf("Шестнадцатеричный формат: %x\n", num); // ff
+    printf("Шестнадцатеричный с префиксом: %#x\n", num); // 0xff
+    printf("Восьмеричный формат: %o\n", num);      // 377
+    printf("Двоичный формат (через битовые операции): ");
+
+    for (int i = 7; i >= 0; i--) {
+        printf("%d", (num >> i) & 1);
+    }
+    printf("\n");
+
+    printf("Символ: %c\n", num);  // символ с кодом 255 (зависит от кодировки)
+
     return 0;
 }

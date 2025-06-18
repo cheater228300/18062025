@@ -1,12 +1,13 @@
 /*
 Условие задачи 309:
 309. Напишите программу, которая подсчитывает количество переданных аргументов командной строки (включая имя программы).
+./program 1 2 3 4 5 
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    printf("Solution for task 309\n");
+int main(int argc, char *argv[]) {
+    printf("Количество аргументов: %d\n", argc);
     return 0;
 }
+

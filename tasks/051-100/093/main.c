@@ -4,9 +4,19 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 093\n");
+    int N;
+    printf("Введите число N: ");
+    scanf("%d", &N);
+
+    printf("Делители числа %d:\n", N);
+    for (int i = 1; i <= N; i++) {
+        if (N % i == 0) {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\n");
     return 0;
 }

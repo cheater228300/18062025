@@ -4,9 +4,11 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+#define MAX_VALUE 100
 
 int main() {
-    printf("Solution for task 024\n");
+    int value = MAX_VALUE;
+    printf("MAX_VALUE = %d\n", value);
     return 0;
 }

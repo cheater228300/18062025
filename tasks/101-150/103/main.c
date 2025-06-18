@@ -4,9 +4,16 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 103\n");
+    int N, sum = 0;
+    printf("Введите число N: ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++) {
+        sum += i;
+    }
+
+    printf("Сумма чисел от 1 до %d равна %d\n", N, sum);
     return 0;
 }

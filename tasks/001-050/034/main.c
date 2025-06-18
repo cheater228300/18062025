@@ -4,9 +4,13 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 034\n");
+    float a = 0.1f;
+    float sum = 0.0f;
+    for (int i = 0; i < 10; i++) {
+        sum += a;
+    }
+    printf("Сумма: %.10f (ожидается 1.0)\n", sum);
     return 0;
 }

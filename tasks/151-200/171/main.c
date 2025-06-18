@@ -4,9 +4,19 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 171\n");
+    int arr[] = {10, 20, 30, 40, 50};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int *ptr = arr;          // указатель на первый элемент массива
+    int *end = arr + size;   // указатель на "конец" массива (за последним элементом)
+
+    printf("Обход массива с помощью указателя:\n");
+    while (ptr < end) {
+        printf("%d ", *ptr);
+        ptr++;  // переходим к следующему элементу
+    }
+    printf("\n");
+
     return 0;
 }

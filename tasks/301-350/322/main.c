@@ -4,9 +4,14 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+#define IN_RANGE(x, min, max) ((x) >= (min) && (x) <= (max))
 
 int main() {
-    printf("Solution for task 322\n");
+    int val = 5;
+    if (IN_RANGE(val, 1, 10))
+        printf("%d в диапазоне [1;10]\n", val);
+    else
+        printf("%d вне диапазона\n", val);
     return 0;
 }

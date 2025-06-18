@@ -1,59 +1,76 @@
 /*
-Условие задачи 328:
-328. Реализуйте функцию, которая выполняет побитовое объединение нескольких полей данных в одном числе (например, кодирование дня, месяца и года в 32-битное число).
-*/
-
+Условие задачи 329:
+Напишите программу, которая реализует циклический буфер (кольцевой 
+буфер) с использованием динамического массива. */
 #include <stdio.h>
+#include <stdlib.h>
 
-// Функция для кодирования даты в 32-битное число
-unsigned int encodeDate(unsigned int day, unsigned int month, unsigned int year)
-{
-    // Проверка корректности данных
-    if (day > 31 || month > 12 || year > 9999)
-    {
-        printf("Некорректные данные\n");
-        return 0;
+typedef struct {
+    int *data;
+    int capacity;
+    int head;
+    int tail;
+    int size;
+} RingBuffer;
+
+// Создать буфер заданной ёмкости
+RingBuffer* create_buffer(int capacity) {
+    RingBuffer *rb = malloc(sizeof(RingBuffer));
+    rb->data = malloc(capacity * sizeof(int));
+    rb->capacity = capacity;
+    rb->head = 0;
+    rb->tail = 0;
+    rb->size = 0;
+    return rb;
+}
+
+// Освободить буфер
+void free_buffer(RingBuffer *rb) {
+    free(rb->data);
+    free(rb);
+}
+
+// Проверка, пуст ли буфер
+int is_empty(RingBuffer *rb) {
+    return rb->size == 0;
+}
+
+// Проверка, полный ли буфер
+int is_full(RingBuffer *rb) {
+    return rb->size == rb->capacity;
+}
+
+// Добавить элемент в буфер
+int enqueue(RingBuffer *rb, int val) {
+    if (is_full(rb)) return 0; // не хватает места
+    rb->data[rb->tail] = val;
+    rb->tail = (rb->tail + 1) % rb->capacity;
+    rb->size++;
+    return 1;
+}
+
+// Удалить элемент из буфера
+int dequeue(RingBuffer *rb, int *val) {
+    if (is_empty(rb)) return 0; // буфер пуст
+    *val = rb->data[rb->head];
+    rb->head = (rb->head + 1) % rb->capacity;
+    rb->size--;
+    return 1;
+}
+
+int main() {
+    RingBuffer *rb = create_buffer(5);
+
+    enqueue(rb, 10);
+    enqueue(rb, 20);
+    enqueue(rb, 30);
+
+    int val;
+    while (dequeue(rb, &val)) {
+        printf("%d ", val);
     }
+    printf("\n");
 
-    // Кодирование:
-    // День - 5 бит (0-31)
-    // Месяц - 4 бита (0-15)
-    // Год - остальные биты (до 9999)
-    unsigned int encoded = 0;
-    encoded |= (day & 0x1F);         // 5 бит для дня
-    encoded |= (month & 0x0F) << 5;  // 4 бита для месяца, сдвинутые на 5
-    encoded |= (year & 0xFFFF) << 9; // 16 бит для года, сдвинутые на 9
-
-    return encoded;
-}
-
-// Функция для декодирования даты
-void decodeDate(unsigned int encoded, unsigned int *day, unsigned int *month, unsigned int *year)
-{
-    *day = encoded & 0x1F;           // Маска для дня (первые 5 бит)
-    *month = (encoded >> 5) & 0x0F;  // Маска для месяца (следующие 4 бита)
-    *year = (encoded >> 9) & 0xFFFF; // Маска для года (оставшиеся биты)
-}
-
-int main()
-{
-    unsigned int day, month, year;
-
-    printf("Введите день (1-31): ");
-    scanf("%u", &day);
-
-    printf("Введите месяц (1-12): ");
-    scanf("%u", &month);
-
-    printf("Введите год (0-9999): ");
-    scanf("%u", &year);
-
-    unsigned int encoded = encodeDate(day, month, year);
-    printf("Закодированная дата: %u\n", encoded);
-
-    unsigned int decodedDay, decodedMonth, decodedYear;
-    decodeDate(encoded, &decodedDay, &decodedMonth, &decodedYear);
-    printf("Раскодированная дата: %u.%u.%u\n", decodedDay, decodedMonth, decodedYear);
-
+    free_buffer(rb);
     return 0;
 }

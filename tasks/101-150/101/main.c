@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 101\n");
+    int K;
+    printf("Введите значение K (2–18): ");
+    scanf("%d", &K);
+
+    printf("Двузначные числа, сумма цифр которых равна %d:\n", K);
+    for (int i = 10; i <= 99; i++) {
+        int d1 = i / 10;      // десятки
+        int d2 = i % 10;      // единицы
+        if (d1 + d2 == K) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+
     return 0;
 }

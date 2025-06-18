@@ -4,9 +4,11 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 039\n");
+    char ch;
+    printf("Введите символ: ");
+    ch = getchar();  // считываем один символ
+    printf("Вы ввели: %c\n", ch);
     return 0;
 }

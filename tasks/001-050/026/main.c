@@ -4,9 +4,16 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+void example() {
+    auto int a = 10;     // auto можно явно указать, но это избыточно
+    auto float b = 3.14; 
+    auto char c = 'x';
+
+    printf("a = %d, b = %.2f, c = %c\n", a, b, c);
+}
 
 int main() {
-    printf("Solution for task 026\n");
+    example();
     return 0;
 }

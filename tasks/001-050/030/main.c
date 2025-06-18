@@ -4,9 +4,14 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <limits.h>
 
 int main() {
-    printf("Solution for task 030\n");
+    int x = INT_MAX;  // Максимальное значение int
+    printf("Максимальное значение int: %d\n", x);
+
+    x = x + 1;  // Переполнение
+    printf("Значение после переполнения: %d\n", x);
+
     return 0;
 }

@@ -4,9 +4,27 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 118\n");
+    unsigned int num;
+    printf("Введите число: ");
+    scanf("%u", &num);
+
+    if (num == 0) {
+        printf("0 не является степенью двойки.\n");
+        return 0;
+    }
+
+    while (num % 2 == 0) {
+        num /= 2;
+    }
+
+    if (num == 1) {
+        printf("Число является степенью двойки.\n");
+    } else {
+        printf("Число не является степенью двойки.\n");
+    }
+
     return 0;
 }
+

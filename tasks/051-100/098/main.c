@@ -4,9 +4,18 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 098\n");
+    int N;
+    printf("Введите высоту треугольника: ");
+    scanf("%d", &N);
+
+    for (int i = 1; i <= N; i++) {
+        for (int j = 0; j < i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+
     return 0;
 }

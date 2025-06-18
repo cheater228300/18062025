@@ -4,9 +4,16 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+void staticInLoop() {
+    for (int i = 0; i < 5; i++) {
+        static int count = 0;  // Инициализируется только один раз
+        count++;
+        printf("Итерация %d: count = %d\n", i, count);
+    }
+}
 
 int main() {
-    printf("Solution for task 301\n");
+    staticInLoop();
     return 0;
 }

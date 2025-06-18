@@ -4,9 +4,24 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 108\n");
+    int num;
+    int sum = 0;
+
+    printf("Введите числа (0 для завершения):\n");
+
+    while (1) {
+        scanf("%d", &num);
+        if (num == 0) {
+            break;
+        }
+        if (num % 2 == 0) {
+            sum += num;
+        }
+    }
+
+    printf("Сумма чётных чисел: %d\n", sum);
+
     return 0;
 }

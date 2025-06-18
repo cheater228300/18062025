@@ -4,9 +4,19 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 174\n");
+    int arr[5] = {10, 20, 30, 40, 50};
+
+    // Указатель на массив из 5 элементов типа int
+    int (*ptr)[5] = &arr;
+
+    printf("Доступ к элементам массива через указатель на массив:\n");
+    for (int i = 0; i < 5; i++) {
+        // Разыменовываем указатель на массив и обращаемся к элементу i
+        printf("%d ", (*ptr)[i]);
+    }
+    printf("\n");
+
     return 0;
 }

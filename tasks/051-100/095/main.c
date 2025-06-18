@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 095\n");
+    int M, N;
+
+    printf("Введите количество строк (M): ");
+    scanf("%d", &M);
+    printf("Введите количество столбцов (N): ");
+    scanf("%d", &N);
+
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+
     return 0;
 }

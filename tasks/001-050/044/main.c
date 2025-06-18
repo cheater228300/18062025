@@ -4,9 +4,12 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 044\n");
+    int ch;
+    printf("Введите текст (Ctrl+D для окончания ввода):\n");
+    while ((ch = getchar()) != EOF) {
+        putchar(ch);  // выводим символ обратно
+    }
     return 0;
 }

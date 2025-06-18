@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+struct A {
+    char c;      // 1 байт
+    int i;       // 4 байта
+    double d;    // 8 байт
+};
+
+struct B {
+    double d;    // 8 байт
+    int i;       // 4 байта
+    char c;      // 1 байт
+};
 
 int main() {
-    printf("Solution for task 187\n");
+    printf("Размер структуры A: %zu байт\n", sizeof(struct A));
+    printf("Размер структуры B: %zu байт\n", sizeof(struct B));
     return 0;
 }

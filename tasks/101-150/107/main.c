@@ -4,9 +4,32 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 107\n");
+    int num, i = 2;
+    int is_prime = 1; // будем считать число простым, пока не докажем обратное
+
+    printf("Введите число: ");
+    scanf("%d", &num);
+
+    if (num <= 1) {
+        printf("Число %d не является простым.\n", num);
+        return 0;
+    }
+
+    while (i * i <= num) {
+        if (num % i == 0) {
+            is_prime = 0; // нашли делитель, число не простое
+            break;
+        }
+        i++;
+    }
+
+    if (is_prime) {
+        printf("Число %d является простым.\n", num);
+    } else {
+        printf("Число %d не является простым.\n", num);
+    }
+
     return 0;
 }

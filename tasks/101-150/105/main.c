@@ -4,9 +4,27 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 105\n");
+    long long num;
+    int count = 0;
+
+    printf("Введите число: ");
+    scanf("%lld", &num);
+
+    if (num == 0) {
+        count = 1;  // Ноль состоит из одной цифры
+    } else {
+        if (num < 0) {
+            num = -num;  // Сделаем число положительным для подсчёта цифр
+        }
+        while (num > 0) {
+            num /= 10;
+            count++;
+        }
+    }
+
+    printf("Количество цифр в числе: %d\n", count);
+
     return 0;
 }

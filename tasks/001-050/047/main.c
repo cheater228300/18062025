@@ -4,9 +4,24 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <ctype.h>
 
 int main() {
-    printf("Solution for task 047\n");
+    char str[100];
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    
+    int words = 0;
+    int in_word = 0;
+    for (int i = 0; str[i] != '\0' && str[i] != '\n'; i++) {
+        if (isspace(str[i])) {
+            in_word = 0;
+        } else if (!in_word) {
+            in_word = 1;
+            words++;
+        }
+    }
+    
+    printf("Number of words: %d\n", words);
     return 0;
 }

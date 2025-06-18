@@ -4,9 +4,26 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <ctype.h>
+
+int countVowels(const char *str) {
+    int count = 0;
+    char c;
+    while ((c = *str++) != '\0') {
+        c = tolower((unsigned char)c);
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+            c == 'а' || c == 'е' || c == 'ё' || c == 'и' || c == 'о' || c == 'у' || c == 'ы' || c == 'э' || c == 'ю' || c == 'я') {
+            count++;
+        }
+    }
+    return count;
+}
 
 int main() {
-    printf("Solution for task 289\n");
+    const char *text = "Пример текста с гласными vowels";
+
+    int vowelsCount = countVowels(text);
+    printf("Количество гласных: %d\n", vowelsCount);
+
     return 0;
 }

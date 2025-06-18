@@ -4,9 +4,21 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 022\n");
+    float a = 3.5f;
+    float b = 2.7f;
+    double c = 5.1;
+    
+    // Сложение двух float
+    float sum = a + b;
+    
+    // Присваивание результата сложения float переменной int
+    int result = sum;
+
+    printf("a = %f, b = %f\n", a, b);
+    printf("sum (float) = %f\n", sum);
+    printf("result (int) = %d\n", result);
+
     return 0;
 }

@@ -4,9 +4,36 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+
+enum Month {
+    January = 1,
+    February,
+    March,
+    April,
+    May,
+    June,
+    July,
+    August,
+    September,
+    October,
+    November,
+    December
+};
 
 int main() {
-    printf("Solution for task 178\n");
+    enum Month currentMonth = October;
+
+    printf("Текущий месяц номер: %d\n", currentMonth);
+
+    if (currentMonth == December || currentMonth == January || currentMonth == February) {
+        printf("Сейчас зима.\n");
+    } else if (currentMonth >= March && currentMonth <= May) {
+        printf("Сейчас весна.\n");
+    } else if (currentMonth >= June && currentMonth <= August) {
+        printf("Сейчас лето.\n");
+    } else {
+        printf("Сейчас осень.\n");
+    }
+
     return 0;
 }

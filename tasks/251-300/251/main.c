@@ -1,4 +1,4 @@
-#include "src/utils.h"
+#include "utils.h"
 
 int main() {
     print_hello();

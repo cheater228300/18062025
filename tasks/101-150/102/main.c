@@ -4,9 +4,13 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 102\n");
+    int i = 1;
+    while (i <= 20) {
+        printf("%d ", i);
+        i++;
+    }
+    printf("\n");
     return 0;
 }

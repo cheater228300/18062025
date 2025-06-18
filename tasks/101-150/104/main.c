@@ -4,9 +4,22 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 104\n");
+    int num;
+    printf("Введите положительное число: ");
+    scanf("%d", &num);
+
+    if (num < 0) {
+        printf("Число не положительное.\n");
+        return 1;
+    }
+
+    printf("Цифры в обратном порядке: ");
+    while (num > 0) {
+        printf("%d", num % 10);  // выводим последнюю цифру
+        num /= 10;               // убираем последнюю цифру
+    }
+    printf("\n");
     return 0;
 }

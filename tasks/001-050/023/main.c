@@ -4,9 +4,25 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdbool.h>  // Подключаем для bool
 
 int main() {
-    printf("Solution for task 023\n");
+    bool flag = true;  // или _Bool flag = 1;
+
+    if (flag) {
+        printf("Flag is true\n");
+    } else {
+        printf("Flag is false\n");
+    }
+
+    // Можно поменять значение
+    flag = false;
+
+    if (flag) {
+        printf("Flag is true\n");
+    } else {
+        printf("Flag is false\n");
+    }
+
     return 0;
 }

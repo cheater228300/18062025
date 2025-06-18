@@ -4,9 +4,14 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 170\n");
+    int var = 42;
+    int *ptr = &var;
+
+    printf("Значение переменной var: %d\n", var);
+    printf("Адрес переменной var: %p\n", (void*)ptr);
+    printf("Значение через указатель: %d\n", *ptr);
+
     return 0;
 }

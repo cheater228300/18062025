@@ -4,9 +4,22 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 099\n");
+    int n, sum = 0;
+    printf("Введите число: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i < n; i++) {
+        if (n % i == 0) {
+            sum += i;
+        }
+    }
+
+    if (sum == n)
+        printf("%d — совершенное число\n", n);
+    else
+        printf("%d — не является совершенным\n", n);
+
     return 0;
 }

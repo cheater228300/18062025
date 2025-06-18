@@ -4,9 +4,13 @@
 */
 
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-    printf("Solution for task 100\n");
+    printf("x\t|\ty = 2x + 3\n");
+    printf("-----------------------\n");
+    for (int x = -5; x <= 5; x++) {
+        int y = 2 * x + 3;
+        printf("%d\t|\t%d\n", x, y);
+    }
     return 0;
 }
